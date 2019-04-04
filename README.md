@@ -1,4 +1,4 @@
-# ngx-modules
+# ngx-modules cookbook
 [![Chef cookbook](https://img.shields.io/cookbook/v/ngx-modules.svg?style=flat-square)]()
 [![license](https://img.shields.io/github/license/aspyatkin/ngx-modules-cookbook.svg?style=flat-square)]()  
 Configure [nginx](http://nginx.org) web server modules for [ngx](https://github.com/aspyatkin/ngx-cookbook) cookbook.
@@ -23,7 +23,7 @@ Configure [nginx](http://nginx.org) web server modules for [ngx](https://github.
 
 ```ruby
 ngx_http_ssl_module 'default' do
-  # install latest version of OpenSSL
+  # install the latest version of OpenSSL
   openssl_version '1.1.1b'
   openssl_checksum '5c557b023230413dfb0756f3137a13e6d726838ccd1430888ad15bfb2b43ea4b'
   action :add
