@@ -13,6 +13,7 @@ Configure [nginx](http://nginx.org) web server modules for [ngx](https://github.
 - [ngx_http_secure_link_module](https://nginx.org/en/docs/http/ngx_http_secure_link_module.html)
 - [ngx_http_image_filter_module](http://nginx.org/en/docs/http/ngx_http_image_filter_module.html)
 - [ngx_http_js_module](http://nginx.org/en/docs/http/ngx_http_js_module.html)
+- [ngx_http_geoip2_module](https://github.com/leev/ngx_http_geoip2_module)
 - [ngx_devel_kit](https://github.com/simplresty/ngx_devel_kit)
 - [ngx_lua_module](https://github.com/openresty/lua-nginx-module)
 - [ngx_set_misc_module](https://github.com/openresty/set-misc-nginx-module)
@@ -36,6 +37,7 @@ ngx_http_gzip_static_module 'default'
 ngx_http_secure_link_module 'default'
 ngx_http_image_filter_module 'default'
 ngx_http_js_module 'default'
+ngx_http_geoip2_module 'default'
 ngx_devel_kit 'default'
 ngx_lua_module 'default'
 ngx_set_misc_module 'default'
