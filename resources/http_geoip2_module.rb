@@ -5,7 +5,6 @@ property :url_template, String, default: 'https://github.com/leev/ngx_http_geoip
 property :checksum, String, default: '15bd1005228cf2c869a6f09e8c41a6aaa6846e4936c473106786ae8ac860fab7'
 
 property :apt_repository_uri, String, default: 'ppa:maxmind/ppa'
-property :apt_repository_distribution, String, default: 'stable'
 property :apt_packages, Array, default: %w[
   libmaxminddb0
   libmaxminddb-dev
@@ -20,7 +19,8 @@ action :add do
   when 'debian'
     apt_repository 'maxmind' do
       uri new_resource.apt_repository_uri
-      distribution new_resource.apt_repository_distribution
+      distribution node['lsb']['codename']
+      components ['main']
       action :add
     end
 
