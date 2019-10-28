@@ -19,6 +19,7 @@ Configure [nginx](http://nginx.org) web server modules for [ngx](https://github.
 - [ngx_set_misc_module](https://github.com/openresty/set-misc-nginx-module)
 - [ngx_headers_more_module](https://github.com/openresty/headers-more-nginx-module)
 - [ngx_brotli_module](https://github.com/eustas/ngx_brotli)
+- [ngx_cache_purge_module](https://github.com/nginx-modules/ngx_cache_purge)
 
 ## Usage
 
@@ -43,6 +44,7 @@ ngx_lua_module 'default'
 ngx_set_misc_module 'default'
 ngx_headers_more_module 'default'
 ngx_brotli_module 'default'
+ngx_cache_purge_module 'default'
 
 nginx_install 'default' do
   action :run
