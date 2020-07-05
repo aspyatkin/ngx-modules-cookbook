@@ -10,6 +10,7 @@ Configure [nginx](http://nginx.org) web server modules for [ngx](https://github.
 - [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
 - [ngx_http_stub_status_module](https://nginx.org/en/docs/http/ngx_http_stub_status_module.html)
 - [ngx_http_gzip_static_module](http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html)
+- [ngx_http_dav_module](https://nginx.org/en/docs/http/ngx_http_dav_module.html)
 - [ngx_http_secure_link_module](https://nginx.org/en/docs/http/ngx_http_secure_link_module.html)
 - [ngx_http_image_filter_module](http://nginx.org/en/docs/http/ngx_http_image_filter_module.html)
 - [ngx_http_js_module](http://nginx.org/en/docs/http/ngx_http_js_module.html)
@@ -20,6 +21,7 @@ Configure [nginx](http://nginx.org) web server modules for [ngx](https://github.
 - [ngx_headers_more_module](https://github.com/openresty/headers-more-nginx-module)
 - [ngx_brotli_module](https://github.com/eustas/ngx_brotli)
 - [ngx_cache_purge_module](https://github.com/nginx-modules/ngx_cache_purge)
+- [ngx_http_dav_ext_module](https://github.com/arut/nginx-dav-ext-module)
 
 ## Usage
 
@@ -35,6 +37,8 @@ ngx_http_v2_module 'default'
 ngx_http_realip_module 'default'
 ngx_http_stub_status_module 'default'
 ngx_http_gzip_static_module 'default'
+ngx_http_dav_module 'default'
+ngx_http_dav_ext_module 'default'
 ngx_http_secure_link_module 'default'
 ngx_http_image_filter_module 'default'
 ngx_http_js_module 'default'
