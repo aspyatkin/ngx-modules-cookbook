@@ -1,8 +1,8 @@
 resource_name :ngx_http_geoip2_module
 
-property :version, String, default: '3.2'
+property :version, String, default: '3.3'
 property :url_template, String, default: 'https://github.com/leev/ngx_http_geoip2_module/archive/%{version}.tar.gz'
-property :checksum, String, default: '15bd1005228cf2c869a6f09e8c41a6aaa6846e4936c473106786ae8ac860fab7'
+property :checksum, String, default: '41378438c833e313a18869d0c4a72704b4835c30acaf7fd68013ab6732ff78a7'
 
 property :apt_repository_uri, String, default: 'ppa:maxmind/ppa'
 property :apt_packages, Array, default: %w[
