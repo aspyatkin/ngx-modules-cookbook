@@ -2,7 +2,7 @@ name 'ngx-modules'
 maintainer 'Alexander Pyatkin'
 maintainer_email 'aspyatkin@gmail.com'
 license 'MIT'
-version '1.3.1'
+version '1.3.2'
 description 'Configure nginx web server modules'
 
 source_url 'https://github.com/aspyatkin/ngx-modules-cookbook' if respond_to?(:source_url)
