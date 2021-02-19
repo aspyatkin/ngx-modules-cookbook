@@ -1,4 +1,5 @@
 resource_name :ngx_http_js_module
+provides :ngx_http_js_module
 
 property :version, String, default: '0.3.0'
 property :url_template, String, default: 'https://github.com/nginx/njs/archive/%{version}.tar.gz'
@@ -29,7 +30,7 @@ action :add do
   end
 
   nginx_module 'ngx_http_js' do
-    flags %W[--add-module=#{::File.join(extract_path, 'nginx')}]
+    flags "--add-module=#{::File.join(extract_path, 'nginx')}"
     action :add
   end
 end

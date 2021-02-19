@@ -1,4 +1,5 @@
 resource_name :ngx_set_misc_module
+provides :ngx_set_misc_module
 
 property :version, String, default: '0.32'
 property :url_template, String, default: 'https://github.com/openresty/set-misc-nginx-module/archive/v%{version}.tar.gz'
@@ -29,7 +30,7 @@ action :add do
   end
 
   nginx_module 'ngx_set_misc' do
-    flags %W[--add-module=#{extract_path}]
+    flags ["--add-module=#{extract_path}"]
     action :add
   end
 end

@@ -1,13 +1,14 @@
 resource_name :ngx_http_ssl_module
+provides :ngx_http_ssl_module
 
-property :openssl_version, [String, NilClass], default: nil
+property :openssl_version, [String, NilClass]
 property :openssl_url_template, String, default: 'https://www.openssl.org/source/openssl-%{version}.tar.gz'
-property :openssl_checksum, [String, NilClass], default: nil
+property :openssl_checksum, [String, NilClass]
 
 default_action :add
 
 action :add do
-  configure_flags = %w[--with-http_ssl_module]
+  configure_flags = ['--with-http_ssl_module']
   install_openssl = !(new_resource.openssl_version.nil? || new_resource.openssl_checksum.nil?)
 
   if install_openssl

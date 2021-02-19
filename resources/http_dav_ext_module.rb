@@ -1,4 +1,5 @@
 resource_name :ngx_http_dav_ext_module
+provides :ngx_http_dav_ext_module
 
 property :version, String, default: '3.0.0'
 property :url_template, String, default: 'https://github.com/arut/nginx-dav-ext-module/archive/v%{version}.tar.gz'
@@ -31,7 +32,7 @@ action :add do
   end
 
   nginx_module 'ngx_http_dav_ext' do
-    flags %W[--add-module=#{extract_path}]
+    flags "--add-module=#{extract_path}"
     action :add
   end
 end

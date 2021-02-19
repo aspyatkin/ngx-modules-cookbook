@@ -1,4 +1,5 @@
 resource_name :ngx_lua_module
+provides :ngx_lua_module
 
 property :version, String, default: '0.10.14'
 property :url_template, String, default: 'https://github.com/openresty/lua-nginx-module/archive/v%{version}.tar.gz'
@@ -56,13 +57,13 @@ action :add do
   end
 
   nginx_module 'ngx_lua_module' do
-    flags %W[
-      --add-module=#{extract_path}
-      --with-ld-opt=-Wl,-rpath,/usr/local/lib
+    flags [
+      "--add-module=#{extract_path}",
+      '--with-ld-opt=-Wl,-rpath,/usr/local/lib',
     ]
     env_vars({
       'LUAJIT_INC' => '/usr/local/include/luajit-2.0',
-      'LUAJIT_LIB' => '/usr/local/lib'
+      'LUAJIT_LIB' => '/usr/local/lib',
     })
     action :add
   end

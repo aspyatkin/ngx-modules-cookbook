@@ -1,7 +1,8 @@
 resource_name :ngx_brotli_module
+provides :ngx_brotli_module
 
-property :version, String, default: 'v0.1.2'
-property :url, String, default: 'https://github.com/eustas/ngx_brotli'
+property :version, String, default: 'v1.0.0rc'
+property :url, String, default: 'https://github.com/google/ngx_brotli'
 
 default_action :add
 
@@ -22,7 +23,7 @@ action :add do
   end
 
   nginx_module 'ngx_brotli' do
-    flags %W[--add-module=#{src_dir}]
+    flags "--add-module=#{src_dir}"
     action :add
   end
 end

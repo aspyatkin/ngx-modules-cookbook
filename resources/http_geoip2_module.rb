@@ -1,25 +1,20 @@
 resource_name :ngx_http_geoip2_module
+provides :ngx_http_geoip2_module
 
 property :version, String, default: '3.3'
 property :url_template, String, default: 'https://github.com/leev/ngx_http_geoip2_module/archive/%{version}.tar.gz'
 property :checksum, String, default: '41378438c833e313a18869d0c4a72704b4835c30acaf7fd68013ab6732ff78a7'
 
 property :apt_repository_uri, String, default: 'ppa:maxmind/ppa'
-property :apt_packages, Array, default: %w[
-  libmaxminddb0
-  libmaxminddb-dev
-  mmdb-bin
-]
-property :apt_upgrade, [TrueClass, FalseClass], default: false
+property :apt_packages, Array, default: %w[libmaxminddb0 libmaxminddb-dev mmdb-bin]
+property :apt_upgrade, [true, false], default: false
 
 default_action :add
 
 action :add do
-  case node['platform_family']
-  when 'debian'
+  if platform_family?('debian')
     apt_repository 'maxmind' do
       uri new_resource.apt_repository_uri
-      distribution node['lsb']['codename']
       components ['main']
       action :add
     end
@@ -53,7 +48,7 @@ action :add do
   end
 
   nginx_module 'ngx_http_geoip2' do
-    flags %W[--add-module=#{extract_path}]
+    flags "--add-module=#{extract_path}"
     action :add
   end
 end

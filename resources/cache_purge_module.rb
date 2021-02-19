@@ -1,4 +1,5 @@
 resource_name :ngx_cache_purge_module
+provides :ngx_cache_purge_module
 
 property :version, String, default: '2.5'
 property :url_template, String, default: 'https://github.com/nginx-modules/ngx_cache_purge/archive/%{version}.tar.gz'
@@ -28,7 +29,7 @@ action :add do
   end
 
   nginx_module 'ngx_cache_purge' do
-    flags %W[--add-module=#{extract_path}]
+    flags "--add-module=#{extract_path}"
     action :add
   end
 end

@@ -1,4 +1,5 @@
 resource_name :ngx_headers_more_module
+provides :ngx_headers_more_module
 
 property :version, String, default: '0.33'
 property :url_template, String, default: 'https://github.com/openresty/headers-more-nginx-module/archive/v%{version}.tar.gz'
@@ -29,7 +30,7 @@ action :add do
   end
 
   nginx_module 'ngx_headers_more' do
-    flags %W[--add-module=#{extract_path}]
+    flags "--add-module=#{extract_path}"
     action :add
   end
 end
